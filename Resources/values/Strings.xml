@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ApplicationName">OpenDay</string>
+    <string name="Support">Support</string>
+    <string name="Labs">Labs</string>
+    <string name="Maps">Maps</string>
+    <string name="News">News</string>
+    <string name="Return">Return</string>
+</resources>
