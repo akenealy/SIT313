@@ -11,11 +11,19 @@ namespace OpenDay
     [Activity(Label ="@string/Labs")]
     public class Labs : Activity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        LabData[] labs;
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.Labs);
+
+            labs = new LabData[] { new LabData("1", "2", "3"), new LabData("4", "5", "6") };
+            ListView lablist = FindViewById<ListView>(Resource.Id.listview1);
+            lablist.Adapter = new ArrayAdapter<LabData>(this, Resource.Layout.List, labs);
+
+            lablist.ItemClick += (object sender, AdapterView.ItemClickEventArgs args) => OnLabClick(sender, args);
+
 
             Button Return = FindViewById<Button>(Resource.Id.buttonreturn);
             Return.Click += (sender, e) =>
@@ -24,5 +32,26 @@ namespace OpenDay
                 StartActivity(intent);
             };
         }
+
+        protected void OnLabClick(object sender, EventArgs e)
+        {
+            AdapterView.ItemClickEventArgs args = (AdapterView.ItemClickEventArgs) e;
+            var lab = labs[args.Position];
+        }
     }
+
+    public class LabData
+    {
+        public LabData(string room, string building, string type)
+        {
+            LabRoom = room;
+            LabBuilding = building;
+            LabType = type;
+        }
+
+        public string LabRoom { get; set; }
+        public string LabBuilding { get; set; }
+        public string LabType { get; set; }
+    }
+
 }

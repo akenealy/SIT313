@@ -11,9 +11,9 @@ namespace OpenDay
     [Activity(Label = "OpenDay", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);

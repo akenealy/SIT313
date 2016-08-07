@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-  <RelativeLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true">
     <Button
         android:text="Return"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonreturn" />
-  </RelativeLayout>
-</RelativeLayout>
+    <TableLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayout1">
+        <TableRow
+            android:id="@+id/tableRow1">
+            <TextView
+                android:text="Contact Number:        0487612123"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_columnSpan="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2">
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3">
+            <EditText
+                android:gravity="top|left"
+                android:text="Enter any Feedback/Issues here"
+                android:lines="10"
+                android:maxLines="10"
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText1" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:text="Submit Feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1" />
+</LinearLayout>
